@@ -24,7 +24,7 @@ export const AuthProvider = ({children}) => {
             console.log(res.data);
             setUser(res.data);
             setIsAuthenticated(true);
-
+            setLoading(false);
         } catch (error) {
             console.log(error.response.data);
             setErrors(error.response.data.message);
@@ -42,6 +42,12 @@ export const AuthProvider = ({children}) => {
         }
     };
 
+    const logout = () => {
+        Cookies.remove("token");
+        setIsAuthenticated(false);
+        setUser(null);
+    }
+
     useEffect(() =>{
         if(errors.length > 0){
             const timer = setTimeout(()=> {
@@ -55,20 +61,17 @@ export const AuthProvider = ({children}) => {
     // Para ver si hay una cookie con el token 
     useEffect(() =>{
 
-        async function checkLogin () {
+        const checkLogin = async () => {
             const cookies = Cookies.get();
 
             if(!cookies.token){
                 setIsAuthenticated(false);
-                return setUser(null);
+                setLoading(false);
+                return;
             }
             try {
                 const res = await verityTokenRequet(cookies.token);
-                if(!res.data) {
-                    setIsAuthenticated(false);
-                    setLoading(false);
-                    return ; 
-                }
+                if(!res.data) return setIsAuthenticated(false);
                 setIsAuthenticated(true);
                 setUser(res.data);
                 setLoading(false);
@@ -82,7 +85,7 @@ export const AuthProvider = ({children}) => {
     } , []);
 
     return (
-        <AuthContext.Provider value={{signup, user, isAuthenticated, errors, signin, loading}}>
+        <AuthContext.Provider value={{signup, user, isAuthenticated, errors, signin, loading, logout}}>
             {children}
         </AuthContext.Provider>
     )

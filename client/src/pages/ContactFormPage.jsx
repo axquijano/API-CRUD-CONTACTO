@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import {useForm} from 'react-hook-form';
 import PhoneList from '../components/PhoneList';
-import { useContact } from '../context/ContactContext';
+import { useContacts } from '../context/ContactContext';
 
 let schemaTelephone = {
-    tipo : "movil",
-    numero_telefono : ""
+    type : "movil",
+    phone_number : ""
 }
 
 const ContactFormPage = () => {
     const {register, handleSubmit, formState: {errors},} = useForm();
-    const {contacts, createContact } = useContact();
+    const {contacts, createContact } = useContacts();
     // const { data, isLoading, error, createContacts} = useContactData();
     const [telephones, setTelephones] = useState([schemaTelephone]);
 

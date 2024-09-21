@@ -1,22 +1,31 @@
 import { createContext, useContext, useState} from "react";
-import { createContactRequest } from "../api/contact";
+import { createContactRequest , getContactsRequest} from "../api/contact";
 
 const ContactContext = createContext();
 
 //Hook
-export const useContact = () => {
+export const useContacts = () => {
     const context = useContext(ContactContext);
 
     if(!context){
         throw new Error("useContact must be used within a ContactProvider");
     }
     return  context;
-}
+};
+
 export function ContactProvider({children}){
     const [contacts, setContacts] = useState([]);
 
-    const createContact = async (contact) => {
+    const getContacts = async () => {
+        try {
+            const res = await getContactsRequest();
+            setContacts(res.data);
+        } catch (error) {
+            console.log(error);
+        }
         
+    }
+    const createContact = async (contact) => {
         const res = await createContactRequest(contact);
         console.log(res);
     }
@@ -24,7 +33,8 @@ export function ContactProvider({children}){
         <ContactContext.Provider 
             value={{
                 contacts, 
-                createContact
+                createContact,
+                getContacts
             }}
         >
             {children}

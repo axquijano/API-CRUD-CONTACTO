@@ -10,7 +10,7 @@ const RegisterPage = () => {
 
     useEffect(()=>{
         if (isAuthenticated){
-            navigate("/");
+            navigate("/contact/phones ");
         }
     }, [isAuthenticated])
     const onSubmit = handleSubmit(async (values) =>{

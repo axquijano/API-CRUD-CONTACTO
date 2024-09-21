@@ -1,7 +1,7 @@
 import axios from './axios.js'
 
 //Para consultar los contactos con todos sus telefonos
-export const getContactsRequest = () => axios.get(`/contact/phones`);
+export const getContactsRequest = () => axios.get('/contact/phones');
 
 export const getContactRequest = (id) =>axios.get(`/contact/${id}`);
 
