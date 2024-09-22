@@ -5,8 +5,8 @@ const Navbar = () => {
 
     const {isAuthenticated, logout, user } = useAuth();
     return (
-        <nav className='bg-zinc-700 my-3 flex justify-between py-5 px-10 rounded-lg'>
-            <Link to={"/"}>
+        <nav className='bg-zinc-700 mb-3 flex justify-between py-5 px-20 '>
+            <Link to={isAuthenticated ? "/contacts" : "/"}>
                 <h1 className='text-2xl font-bold'>Contact Manager</h1>
             </Link>
            

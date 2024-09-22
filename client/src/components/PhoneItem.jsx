@@ -18,7 +18,7 @@ const PhoneItem = ({ index, phone, onPhoneChange, onDeletePhone }) => {
     }
 
     return (
-        <div className='flex items-center space-x-4'>
+        <div className='flex items-center space-x-4 py-2'>
             <select 
                 value={phone.type} 
                 onChange={handleTypeChange}

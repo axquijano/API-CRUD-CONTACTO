@@ -9,7 +9,7 @@ router.get('/contact/phones', authRequired , getAllContactsWithTelephone);
 router.get('/contact/:id', authRequired , getContacto);
 router.post('/contact', authRequired, createContacto);
 router.delete('/contact/:id', authRequired, deleteContacto);
-router.put('contact', authRequired, updateContacto);
+router.put('/contact/:id', authRequired, updateContacto);
 
 
 export default router;

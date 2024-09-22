@@ -16,6 +16,7 @@ const App = () => {
       <ContactProvider>
         <BrowserRouter>
           <Navbar/>
+          <main className="container mx-auto px-5">
           <Routes>
             <Route path="/" element={<HomePage></HomePage>} />
             <Route path="/login" element={<LoginPage/>} />
@@ -23,12 +24,14 @@ const App = () => {
 
             {/* Rutas protegidas */}
             <Route element={<ProtectedRoute></ProtectedRoute>}>
-              <Route path="/contact/phones" element={<ContactPage></ContactPage>} />
+              <Route path="/contacts" element={<ContactPage></ContactPage>} />
               <Route path="/add-contact" element={<ContactFormPage></ContactFormPage>} />
               <Route path="/contact/:id" element={<ContactFormPage></ContactFormPage>} />
               <Route path="/profile" element={<ProfilePage></ProfilePage>} />
             </Route>
           </Routes>
+          </main>
+         
         </BrowserRouter>
       </ContactProvider>
       

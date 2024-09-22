@@ -1,5 +1,6 @@
 import  { useEffect } from 'react';
 import { useContacts } from '../context/ContactContext';
+import ContactCard from "../components/ContactCard";
 
 const ContactPage = () => {
     const {getContacts, contacts } = useContacts();
@@ -9,15 +10,10 @@ const ContactPage = () => {
  
     if(contacts.length === 0) return (<h1>No contacts</h1>);
     return (
-        <div>
-             <h1>ContactPage</h1>
+        <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-2'>
             { 
                 contacts.map(currentContact => (
-                    <div key={currentContact.id }>
-                        <h1>{currentContact.first_name} </h1>
-                        <p>{currentContact.email}</p>
-                        <p>{currentContact.address}</p>
-                    </div>
+                    <ContactCard  key={`cardContact-${currentContact.id}`} contact={currentContact}/>
                 ))
             }
         </div>

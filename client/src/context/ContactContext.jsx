@@ -1,5 +1,5 @@
 import { createContext, useContext, useState} from "react";
-import { createContactRequest , getContactsRequest} from "../api/contact";
+import { createContactRequest , deleteContactRequest, getContactsRequest, getContactRequest, updateContactRequest} from "../api/contact";
 
 const ContactContext = createContext();
 
@@ -25,16 +25,48 @@ export function ContactProvider({children}){
         }
         
     }
+    const deleteContact = async (id) => {
+        try {
+            const res = await deleteContactRequest(id);
+            if(res.status === 204) setContacts(contacts.filter(contact => contact.id != id));
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    
+    const getContact = async (id) => {
+        try {
+            const res = await getContactRequest(id);
+            return res.data;
+        } catch (error) {
+            console.log(error);
+            return null;   
+        }
+        
+    }
+
     const createContact = async (contact) => {
         const res = await createContactRequest(contact);
         console.log(res);
+    }
+
+    const updateContact = async (id, contact) => {
+        try{
+            const res = await updateContactRequest(id, contact);
+            console.log(res);
+        }catch(error){
+            console.log(error);
+        }
     }
     return (
         <ContactContext.Provider 
             value={{
                 contacts, 
                 createContact,
-                getContacts
+                getContacts,
+                deleteContact,
+                getContact, 
+                updateContact
             }}
         >
             {children}
