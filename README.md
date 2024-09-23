@@ -20,7 +20,6 @@ Abre una terminal y ejecuta el siguiente comando para clonar el repositorio:
 
 ```bash
 git clone https://github.com/axquijano/API-CRUD-CONTACTO.git
-cd API-CRUD-CONTACTO 
 ```
 ### 2. Configurando la base de datos
 
