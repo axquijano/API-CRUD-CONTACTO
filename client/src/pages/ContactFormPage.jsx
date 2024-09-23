@@ -63,7 +63,7 @@ const ContactFormPage = () => {
                         {...register('first_name', {required: true})}
                         className='w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2'
                         />
-                    {errors.first_name && <span>{errors.first_name.message}</span>}
+                    {errors.first_name  && <p className="text-red-500">First Name is requered</p>}
 
                     <label htmlFor='last_name'>Last name</label>
                     <input 
@@ -72,7 +72,7 @@ const ContactFormPage = () => {
                         {...register('last_name', {required: true})}
                         className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"
                     />
-                    {errors.last_name && <span>{errors.last_name.message}</span>}
+                    {errors.last_name  && <p className="text-red-500">Last Name is requered</p>}
 
                     <label htmlFor='email'>Email</label>
                     <input 
@@ -81,7 +81,7 @@ const ContactFormPage = () => {
                         {...register('email', {required: true})}
                         className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"
                     />
-                    
+                    {errors.email  && <p className="text-red-500">Email is requered</p>}
                     <label htmlFor='address'>Address</label>
                     <input 
                         type="text" 
@@ -89,7 +89,7 @@ const ContactFormPage = () => {
                         {...register('address', {required: true})}
                         className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"
                     />
-                    <br />
+                    {errors.address  && <p className="text-red-500">Address is requered</p>}
                     <PhoneList phones={telephones} setPhones={setTelephones}></PhoneList>
                     <button type='submit' className='bg-indigo-500 px-3 py-2 rounded-md'>Save</button>
                 </form>

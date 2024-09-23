@@ -1,9 +1,10 @@
 import userImg from '../assets/user.svg'
 import { useContacts } from "../context/ContactContext";
 import { Link } from "react-router-dom";
+import { useNavigate,  } from 'react-router-dom';
 const ContactCard = ({contact}) => {
     const {deleteContact} = useContacts();
-
+    const navigate = useNavigate();
     return (
       <div className="max-w-sm bg-zinc-800 text-white border border-zinc-700 rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
         {/* Avatar e información del contacto */}
@@ -39,8 +40,9 @@ const ContactCard = ({contact}) => {
       <div className="flex justify-around p-4 bg-zinc-700 border-t border-zinc-600">
         <button 
           className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+          onClick={()=>{navigate(`/contact/${contact.id}`)}}
         >
-          <Link to={`/contact/${contact.id}`}>Edit</Link>
+          Edit
         </button>
         <button className="flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700"
            onClick={() => {deleteContact(contact.id)}}

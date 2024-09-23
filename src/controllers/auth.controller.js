@@ -19,7 +19,7 @@ export const register = async (req, res) => {
         //Generando token, expira en 1 dia
        const token = await createAccessToken({id: user.id});
         //Responde con la cookie y que la guarde 
-        res.cookie('token', token);
+        await res.cookie('token', token);
 
         res.json({
             id : user.id , 
