@@ -60,14 +60,13 @@ export const pool = new pg.Pool({
 ```
 ### 6. Ejecuta el servidor backend:
 
-En la misma terminal ejecuta:
+En la misma terminal y ejecuta:
 ```
 npm run dev
 ```
 ### 7. Instala las dependencias del frontend:
 
-Navega al directorio del frontend y ejecuta:
-abrir otra terminal
+Abre una terminal diferente a la del Backend y navega al directorio del frontend y ejecuta:
 ```
 cd .\client\
 npm install
@@ -82,9 +81,7 @@ npm run dev
 
 1. Asegúrate de que ambos servidores (backend y frontend) estén en ejecución.
 2. Abre tu navegador y dirígete a [http://localhost:5173/](http://localhost:5173/).
-3. Utiliza las siguientes credenciales para iniciar sesión:
-   - **Usuario:** axquijano@gmail.com
-   - **Contraseña:** 1233
+3. Registrate con tus datos y comienza a gestionar tus contactos
 
 ## Tecnologías Utilizadas
 
@@ -97,4 +94,3 @@ Aquí hay una lista de las tecnologías utilizadas en este proyecto:
     <img src="https://react-hook-form.com/images/logo/react-hook-form-logo-only.png" alt="React Hook Form" width="100" />
 </div>
 
-hola
