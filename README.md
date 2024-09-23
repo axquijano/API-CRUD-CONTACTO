@@ -1,4 +1,3 @@
-
 # Proyecto de Libreta de Contactos
 
 Este es un proyecto de libreta de contactos que incluye un backend construido con Node.js, una base de datos PostgreSQL y un frontend en React.
@@ -85,3 +84,15 @@ npm run dev
 3. Utiliza las siguientes credenciales para iniciar sesión:
    - **Usuario:** axquijano
    - **Contraseña:** 1233
+
+## Tecnologías Utilizadas
+
+Aquí hay una lista de las tecnologías utilizadas en este proyecto:
+
+<div style="display: flex; justify-content: space-around;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/590px-Node.js_logo.svg.png" alt="Node.js" width="100" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/620px-Postgresql_elephant.svg.png" alt="PostgreSQL" width="100" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="100" />
+    <img src="https://react-hook-form.com/images/logo/react-hook-form-logo-only.png" alt="React Hook Form" width="100" />
+</div>
+
