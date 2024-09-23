@@ -65,8 +65,10 @@ export const createContacto = async (req, res)  =>  {
 
         if (arrayTelefonos && arrayTelefonos.length > 0) {
             for (const telefono of arrayTelefonos) {
-                newTelefono = { contact_id : rows[0].id , ...telefono};
-                await createPhone(newTelefono);
+                if(telefono.phone_number!=""){
+                    newTelefono = { contact_id : rows[0].id , ...telefono};
+                    await createPhone(newTelefono);
+                }
             }
         }
         return res.json(rows[0]);

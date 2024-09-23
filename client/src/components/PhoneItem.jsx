@@ -2,13 +2,11 @@ import React from 'react';
 
 const PhoneItem = ({ index, phone, onPhoneChange, onDeletePhone }) => {
     const handleTypeChange = (e) => {
-        
         const newPhone = { ...phone, type: e.target.value };
         onPhoneChange(index, newPhone);
     }
 
     const handleNumberChange = (e) => {
-        console.log(phone.type)
         const newPhone = { ...phone, phone_number: e.target.value };
         onPhoneChange(index, newPhone);
     }

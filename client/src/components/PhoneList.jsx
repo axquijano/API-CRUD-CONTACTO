@@ -11,8 +11,8 @@ const PhoneList = ({phones, setPhones}) => {
 
     // Función para actualizar el valor de un teléfono específico
     const handlePhoneChange = (index, newPhone) => {
-        const updatedPhones = phones.map((phone, i) => (i === index ? newPhone : phone));
-        setPhones(updatedPhones);
+            const updatedPhones = phones.map((phone, i) => (i === index ? newPhone : phone));
+            setPhones(updatedPhones);
     }
 
     // Función para eliminar un teléfono

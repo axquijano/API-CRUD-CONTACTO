@@ -35,6 +35,14 @@ const ContactFormPage = () => {
     },[]);
 
     const onSubmit = handleSubmit((data) => {  
+
+        // Verificar si al menos un número de teléfono está ingresado
+        const hasPhone = telephones.some(phone => phone.phone_number.trim() !== '');
+        
+        if (!hasPhone) {
+            alert("Debes ingresar al menos un número de teléfono.");
+            return; // Salir de la función sin enviar el formulario
+        }
         const jsonData = { 
             first_name: data.first_name, 
             last_name: data.last_name, 
@@ -48,7 +56,6 @@ const ContactFormPage = () => {
             createContact(jsonData);
            
         }
-
         navigate("/contacts");
     });
           

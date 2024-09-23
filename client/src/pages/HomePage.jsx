@@ -7,14 +7,7 @@ const HomePage = () => {
                     Aquí podrás gestionar tus contactos de manera fácil y segura. Accede a tus números de teléfono, direcciones y más, 
                     todo en un solo lugar.
                 </p>
-                {/* Placeholder for future contact details */}
-                <div className="mt-12">
-                    <div className=" text-center">
-                        <p className="text-zinc-400">
-                            Accede a tu cuenta para empezar a ver y gestionar tus contactos.
-                        </p>
-                    </div>
-                </div>
+                
             </div>
         </div>
 
