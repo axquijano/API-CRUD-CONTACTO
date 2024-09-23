@@ -11,7 +11,8 @@ CREATE TABLE Users(
 );
 
 INSERT INTO Users (username, email, password) VALUES
-('axquijano', 'axquijano@gmail.com', '1233');
+('axquijano', 'axquijano@gmail.com', '$2a$10$Ahu4t9AnwjrO71q9NJYa2OjqZMNGZrFC50jWBKb/j6KUpLf0NwED2');
+
 CREATE TABLE Contact(
     id SERIAL PRIMARY KEY, 
     first_name VARCHAR(255),

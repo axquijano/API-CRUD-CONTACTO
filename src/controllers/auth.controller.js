@@ -37,7 +37,7 @@ export const login = async (req, res) => {
     try {
         const data = req.body;
         const userFound = await getUserByEmail(data.email);
-        if (!userFound) return res.status(400).json({ message: "User not found" });
+        if (!userFound) return res.status(400).json({ message: ["User not found"] });
         //comparando password
         const isMatch = await bcrypt.compare(data.password, userFound.password);
         if (!isMatch) return res.status(400).json({ message: ["Incorrect password" ]});
@@ -54,7 +54,7 @@ export const login = async (req, res) => {
 
     } catch (error) {
         console.log(error.message);
-        return res.status(500).json({ message: error.message });
+        return res.status(500).json({ message: [error.message] });
     }
 }
 
