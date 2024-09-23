@@ -19,7 +19,7 @@ export function ContactProvider({children}){
     const getContacts = async () => {
         try {
             const res = await getContactsRequest();
-            await setContacts(res.data);
+            setContacts(res.data);
         } catch (error) {
             console.log(error);
         }
